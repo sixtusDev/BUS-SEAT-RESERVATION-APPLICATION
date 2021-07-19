@@ -1,0 +1,34 @@
+[
+  {
+    "fromLocation": "yobe",
+    "toLocation": "bauchi",
+    "departureDate": "2021-07-21 8:00:00",
+    "arrivalDate": "2021-07-21 12:30:00",
+    "childTransportFare": 10,
+    "adultTransportFare": 30,
+    "availableSeats": 23,
+    "bookedSeats": [],
+    "bus": {
+      "_id": "60c230482cd55833d89a1727",
+      "busNumber": "YLA231",
+      "totalSeats": 23,
+      "busModel": "Toyota Hyace"
+    }
+  },
+  {
+    "fromLocation": "yobe",
+    "toLocation": "bauchi",
+    "departureDate": "2021-07-21 07:30:00",
+    "arrivalDate": "2021-07-21 11:00:00",
+    "childTransportFare": 10,
+    "adultTransportFare": 30,
+    "availableSeats": 23,
+    "bookedSeats": [],
+    "bus": {
+      "_id": "60c230482cd55833d89a1727",
+      "busNumber": "YLA231",
+      "totalSeats": 23,
+      "busModel": "Toyota Hyace"
+    }
+  }
+]
