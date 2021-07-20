@@ -9,7 +9,7 @@
     "availableSeats": 23,
     "bookedSeats": [],
     "bus": {
-      "_id": "60c230482cd55833d89a1727",
+      "_id": "60f6df357d2a7d3d141cfcfa",
       "busNumber": "YLA231",
       "totalSeats": 23,
       "busModel": "Toyota Hyace"
@@ -25,7 +25,7 @@
     "availableSeats": 23,
     "bookedSeats": [],
     "bus": {
-      "_id": "60c230482cd55833d89a1727",
+      "_id": "60f6df357d2a7d3d141cfcfa",
       "busNumber": "YLA231",
       "totalSeats": 23,
       "busModel": "Toyota Hyace"

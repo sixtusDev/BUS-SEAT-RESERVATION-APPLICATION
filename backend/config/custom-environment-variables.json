@@ -1,3 +1,5 @@
 {
-  "jwtPrivateKey": "bus_jwtPrivateKey"
+  "jwtPrivateKey": "bus_jwtPrivateKey",
+  "email": "bus_email",
+  "emailPassword": "bus_emailPassword"
 }

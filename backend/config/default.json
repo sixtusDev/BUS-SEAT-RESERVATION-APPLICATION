@@ -1,3 +1,5 @@
 {
-  "jwtPrivateKey": ""
+  "jwtPrivateKey": "",
+  "email": "",
+  "emailPassword": ""
 }

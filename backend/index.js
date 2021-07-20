@@ -46,6 +46,7 @@ app.use("/api/ticket", ticket);
 app.use("/api/auth", auth);
 app.use(error);
 
+console.log(process.env.bus_jwtPrivateKey);
 const PORT = process.env.PORT || 5000;
 // Start a local server
 app.listen(PORT, () => {

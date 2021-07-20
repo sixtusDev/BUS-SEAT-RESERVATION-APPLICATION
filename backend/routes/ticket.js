@@ -1,6 +1,7 @@
 // Import statements
 const express = require("express");
 const moment = require("moment");
+const config = require("config");
 const { Bus } = require("../model/Bus");
 const { schema, Ticket } = require("../model/Ticket");
 const { TripSchedule } = require("../model/TripSchedule");
@@ -29,7 +30,6 @@ router.post("/", async (req, res) => {
   const user = await User.findById(userId).exec();
   if (!user) return res.status(404).send("User with the given Id not found");
   const tripSchedule = await TripSchedule.findById(tripScheduleId).exec();
-  const num = [1, 2, 3, 4, 5, 6, 7, 8];
   const ticket = new Ticket({
     user: {
       _id: user._id,
@@ -49,7 +49,9 @@ router.post("/", async (req, res) => {
     arrivalDate,
   });
   // Update the available seats for trip schedule
-  tripSchedule.availableSeats = tripSchedule.availableSeats - sits.length;
+  tripSchedule.availableSeats = Math.abs(
+    tripSchedule.availableSeats - sits.length
+  );
   // Update the booked seats for trip schedule
   tripSchedule.bookedSeats = [...tripSchedule.bookedSeats, ...sits];
   await tripSchedule.save();
@@ -59,8 +61,8 @@ router.post("/", async (req, res) => {
     service: "gmail",
     host: "smtp.gmail.com",
     auth: {
-      user: "joyceeinno@gmail.com",
-      pass: "hariethariet",
+      user: config.get("email"),
+      pass: config.get("emailPassword"),
     },
   });
 

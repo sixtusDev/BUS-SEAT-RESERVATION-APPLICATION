@@ -11,8 +11,8 @@ router.post("/", async (req, res) => {
   const { firstName, secondName, email, password, confirmPassword } = req.body;
   const errors = validate(req.body, schema);
   if (errors) return res.status(400).send(errors);
-  if (password != confirmPassword)
-    return res.status(400).send({ passwordMisMatch: "Passwords don't match" });
+  if (password !== confirmPassword)
+    return res.status(400).send("Passwords don't match");
 
   let user = await await User.findOne({ email });
   if (user) return res.status(400).send("User already exist");
