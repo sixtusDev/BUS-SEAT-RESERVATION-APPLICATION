@@ -1,5 +1,6 @@
 {
   "jwtPrivateKey": "",
   "email": "",
-  "emailPassword": ""
+  "emailPassword": "",
+  "db": "mongodb://localhost:27017/bus-reservation"
 }
