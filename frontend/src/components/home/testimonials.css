@@ -1,0 +1,17 @@
+.rec.rec-arrow:hover {
+  background-color: teal !important;
+}
+
+.rec.rec-arrow:focus {
+  background-color: teal !important;
+}
+
+.rec.rec-dot_active {
+  background-color: rgba(0, 128, 128, 0.5);
+  box-shadow: teal 0px 0px 1px 3px !important;
+}
+
+.rec.rec-dot:hover,
+.rec.rec-dot:focus {
+  box-shadow: teal 0px 0px 1px 3px;
+}

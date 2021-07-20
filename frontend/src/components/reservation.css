@@ -1,0 +1,9 @@
+.date-picker {
+  background-color: #ddd3d3;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.date-picker:focus {
+  border-color: teal !important;
+}

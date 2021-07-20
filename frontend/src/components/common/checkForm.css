@@ -1,0 +1,28 @@
+/* .form {
+  position: absolute;
+  background-color: #000;
+  color: #fff;
+  z-index: 200;
+  right: 0;
+  top: 0;
+  width: 30%;
+  padding: 130px 30px 30px 30px;
+
+  height: 100vh;
+}
+
+.form:not(.button, .label) {
+  opacity: 0.5 !important;
+}
+
+.option {
+  background-color: #000 !important;
+}
+
+.label {
+  display: flex;
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 17px;
+  margin-bottom: 10px;
+} */

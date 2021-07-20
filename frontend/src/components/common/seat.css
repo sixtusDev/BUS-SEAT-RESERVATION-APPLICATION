@@ -1,0 +1,138 @@
+.seat {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  display: block;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  z-index: 6;
+}
+.available {
+  background-color: #45892a;
+}
+
+.booked {
+  background-color: #ed0909;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.selected {
+  background-color: #0099ff;
+}
+
+/* .seat-1 {
+  left: 156px;
+  top: 107px;
+}
+
+.seat-2 {
+  left: 156px;
+  top: 144px;
+}
+
+.seat-3 {
+  left: 156px;
+  top: 225px;
+}
+
+.seat-4 {
+  left: 156px;
+  top: 263px;
+}
+
+.seat-5 {
+  left: 217px;
+  top: 107px;
+} */
+
+/* .seat-6 {
+  left: 217px;
+  top: 145px;
+}
+
+.seat-7 {
+  left: 225px;
+  top: 226px;
+}
+
+.seat-8 {
+  left: 225px;
+  top: 263px;
+}
+
+.seat-9 {
+  left: 282px;
+  top: 107px;
+}
+
+.seat-10 {
+  left: 282px;
+  top: 145px;
+}
+
+.seat-11 {
+  left: 294px;
+  top: 226px;
+}
+
+.seat-12 {
+  left: 294px;
+  top: 263px;
+}
+
+.seat-13 {
+  left: 363px;
+  top: 226px;
+}
+
+.seat-14 {
+  left: 363px;
+  top: 263px;
+}
+
+.seat-15 {
+  left: 432px;
+  top: 226px;
+}
+
+.seat-16 {
+  left: 432px;
+  top: 263px;
+}
+
+.seat-17 {
+  left: 448px;
+  top: 107px;
+}
+
+.seat-18 {
+  left: 449px;
+  top: 145px;
+}
+
+.seat-19 {
+  left: 511px;
+  top: 108px;
+}
+
+.seat-20 {
+  left: 510px;
+  top: 146px;
+}
+
+.seat-21 {
+  left: 510px;
+  top: 188px;
+}
+
+.seat-22 {
+  left: 510px;
+  top: 225px;
+}
+
+.seat-23 {
+  left: 510px;
+  top: 263px;
+} */
