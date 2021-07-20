@@ -7,11 +7,14 @@ const { Bus } = require("../model/Bus");
 
 // Connect to mongodb database
 mongoose
-  .connect("mongodb://localhost:27017/bus-reservation", {
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
-    useFindAndModify: false,
-  })
+  .connect(
+    "mongodb+srv://sixtus:hariet@cluster0.yxbk7.mongodb.net/bus-reservation?retryWrites=true&w=majority",
+    {
+      useUnifiedTopology: true,
+      useNewUrlParser: true,
+      useFindAndModify: false,
+    }
+  )
   .then(() => console.log("Connected to mongodb"))
   .catch((err) => console.log("Could not connect to mongodb... ", err));
 
