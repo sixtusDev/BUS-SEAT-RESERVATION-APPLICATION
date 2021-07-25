@@ -42,7 +42,7 @@ async function seedTripSchedule() {
 
   // Generate a number of trip schedules we want and then
   // populate dynamically to the database
-  numberToArray(500).forEach(async (tripSchedule) => {
+  numberToArray(1000).forEach(async (tripSchedule) => {
     const busIndex = generateRandomIndexForArrayIndex(buses);
     const fromLocationIndex = generateRandomIndexForArrayIndex(fromLocation);
     const toLocationIndex = generateRandomIndexForArrayIndex(toLocation);
@@ -52,19 +52,21 @@ async function seedTripSchedule() {
       generateRandomIndexForArrayIndex(childTransportFare);
     const adultTransportFareIndex =
       generateRandomIndexForArrayIndex(childTransportFare);
-    tripSchedule = {
-      fromLocation: fromLocation[fromLocationIndex],
-      toLocation: toLocation[toLocationIndex],
-      departureDate: departureDate[departureDateIndex],
-      arrivalDate: arrivalDate[arrivalDateIndex],
-      childTransportFare: childTransportFare[childTransportFareIndex],
-      adultTransportFare: adultTransportFare[adultTransportFareIndex],
-      availableSeats,
-      bookedSeats,
-      bus: buses[busIndex],
-    };
-    const newTripSchedule = new TripSchedule(tripSchedule);
-    await newTripSchedule.save();
+    if (fromLocationIndex !== toLocationIndex) {
+      tripSchedule = {
+        fromLocation: fromLocation[fromLocationIndex],
+        toLocation: toLocation[toLocationIndex],
+        departureDate: departureDate[departureDateIndex],
+        arrivalDate: arrivalDate[arrivalDateIndex],
+        childTransportFare: childTransportFare[childTransportFareIndex],
+        adultTransportFare: adultTransportFare[adultTransportFareIndex],
+        availableSeats,
+        bookedSeats,
+        bus: buses[busIndex],
+      };
+      const newTripSchedule = new TripSchedule(tripSchedule);
+      await newTripSchedule.save();
+    }
   });
   console.log("Seeds to db completed successfully!");
 }
