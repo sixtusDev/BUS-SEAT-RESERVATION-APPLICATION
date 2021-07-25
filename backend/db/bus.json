@@ -4,5 +4,23 @@
     "totalSeats": 23,
     "availableSeats": 6,
     "busModel": "Toyota Hyace"
+  },
+  {
+    "busNumber": "YLA345",
+    "totalSeats": 23,
+    "availableSeats": 23,
+    "busModel": "Toyota Hyace"
+  },
+  {
+    "busNumber": "ABJ576",
+    "totalSeats": 23,
+    "availableSeats": 23,
+    "busModel": "Mercedez"
+  },
+  {
+    "busNumber": "ABJ345",
+    "totalSeats": 23,
+    "availableSeats": 23,
+    "busModel": "Mercedez"
   }
 ]

@@ -1,36 +1,76 @@
 // Import Statements
-const mongoose = require("mongoose");
-const tripSchedules = require("./tripSchedules.json");
+require("../startup/db")();
 const bus = require("./bus.json");
 const { TripSchedule } = require("../model/TripSchedule");
+const { Ticket } = require("../model/Ticket");
 const { Bus } = require("../model/Bus");
+const { numberToArray } = require("../utils/helperFunctions");
+const {
+  generateRandomIndexForArrayIndex,
+} = require("../utils/helperFunctions");
+const {
+  fromLocation,
+  toLocation,
+  departureDate,
+  arrivalDate,
+  childTransportFare,
+  adultTransportFare,
+  availableSeats,
+  bookedSeats,
+} = require("./tripSchedule");
 
-// Connect to mongodb database
-mongoose
-  .connect(
-    "mongodb+srv://sixtus:hariet@cluster0.yxbk7.mongodb.net/bus-reservation?retryWrites=true&w=majority",
-    {
-      useUnifiedTopology: true,
-      useNewUrlParser: true,
-      useFindAndModify: false,
-    }
-  )
-  .then(() => console.log("Connected to mongodb"))
-  .catch((err) => console.log("Could not connect to mongodb... ", err));
+// Seed bus to mongodb database
+async function seedBus() {
+  await Bus.deleteMany();
+  bus.forEach(async (b) => {
+    b = new Bus(b);
+    await b.save();
+  });
+}
 
-async function seed() {
-  // await Bus.deleteMany();
-  // bus.forEach(async (b) => {
-  //   b = new Bus(b);
-  //   await b.save();
-  // });
+// get bus collection from mongodb database
+async function getBus() {
+  return Bus.find();
+}
+
+// Seed tripSchedules to mongodb database
+async function seedTripSchedule() {
+  await seedBus();
   await TripSchedule.deleteMany();
-  const bus1 = await Bus.findOne({ busNumber: "YLA231" });
-  tripSchedules.forEach(async (tripSchedule) => {
-    tripSchedule = new TripSchedule(tripSchedule);
-    await tripSchedule.save();
+  await Ticket.deleteMany();
+  const buses = await getBus();
+
+  // Generate a number of trip schedules we want and then
+  // populate dynamically to the database
+  numberToArray(500).forEach(async (tripSchedule) => {
+    const busIndex = generateRandomIndexForArrayIndex(buses);
+    const fromLocationIndex = generateRandomIndexForArrayIndex(fromLocation);
+    const toLocationIndex = generateRandomIndexForArrayIndex(toLocation);
+    const departureDateIndex = generateRandomIndexForArrayIndex(departureDate);
+    const arrivalDateIndex = generateRandomIndexForArrayIndex(arrivalDate);
+    const childTransportFareIndex =
+      generateRandomIndexForArrayIndex(childTransportFare);
+    const adultTransportFareIndex =
+      generateRandomIndexForArrayIndex(childTransportFare);
+    tripSchedule = {
+      fromLocation: fromLocation[fromLocationIndex],
+      toLocation: toLocation[toLocationIndex],
+      departureDate: departureDate[departureDateIndex],
+      arrivalDate: arrivalDate[arrivalDateIndex],
+      childTransportFare: childTransportFare[childTransportFareIndex],
+      adultTransportFare: adultTransportFare[adultTransportFareIndex],
+      availableSeats,
+      bookedSeats,
+      bus: buses[busIndex],
+    };
+    const newTripSchedule = new TripSchedule(tripSchedule);
+    await newTripSchedule.save();
   });
   console.log("Seeds to db completed successfully!");
+}
+
+async function seed() {
+  await seedTripSchedule();
 }
 
 seed();

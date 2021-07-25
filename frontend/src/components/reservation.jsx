@@ -38,7 +38,6 @@ class Reservation extends Form {
       const { data: tripSchedules } = await getTripSchedulesByQueryString(
         queryString
       );
-      console.log(tripSchedules);
       // Push to tripSchedules route and then pass the tripSchedules
       // as a state to be used in tripSchedules component
       this.props.history.push("/reservation/tripschedules", tripSchedules);

@@ -7,13 +7,7 @@
     "childTransportFare": 10,
     "adultTransportFare": 30,
     "availableSeats": 23,
-    "bookedSeats": [],
-    "bus": {
-      "_id": "60f738fa499d1e4b8c09b469",
-      "busNumber": "YLA231",
-      "totalSeats": 23,
-      "busModel": "Toyota Hyace"
-    }
+    "bookedSeats": []
   },
   {
     "fromLocation": "yobe",
@@ -23,12 +17,6 @@
     "childTransportFare": 10,
     "adultTransportFare": 30,
     "availableSeats": 23,
-    "bookedSeats": [],
-    "bus": {
-      "_id": "60f738fa499d1e4b8c09b469",
-      "busNumber": "YLA231",
-      "totalSeats": 23,
-      "busModel": "Toyota Hyace"
-    }
+    "bookedSeats": []
   }
 ]

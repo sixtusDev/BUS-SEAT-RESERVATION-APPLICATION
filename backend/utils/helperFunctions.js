@@ -13,3 +13,16 @@ exports.validate = function (payload, schema) {
   }
   return errors;
 };
+
+exports.generateRandomIndexForArrayIndex = function (array) {
+  return Math.floor(Math.random() * array.length);
+};
+
+// This function converts a number to an array of numbers
+// starting from 1 to the number
+// 20 => [1, 2, 3, ..., 20]
+// Type: can be either string or number in order to return an
+// array of numbers
+exports.numberToArray = function (number) {
+  return Array.from(Array(number).keys(), (n) => n + 1);
+};
