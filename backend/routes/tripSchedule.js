@@ -20,7 +20,9 @@ router.get("/search", async (req, res) => {
   if (tripSchedules.length === 0)
     return res
       .status(404)
-      .send("There are no trip schedules for your location");
+      .send(
+        "Make sure you use [30th July 2021] as date; There are no trip schedules for your location and date. This app is still in development process"
+      );
   res.send(tripSchedules);
 });
 

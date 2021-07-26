@@ -42,7 +42,7 @@ async function seedTripSchedule() {
 
   // Generate a number of trip schedules we want and then
   // populate dynamically to the database
-  numberToArray(1000).forEach(async (tripSchedule) => {
+  numberToArray(3000).forEach(async (tripSchedule) => {
     const busIndex = generateRandomIndexForArrayIndex(buses);
     const fromLocationIndex = generateRandomIndexForArrayIndex(fromLocation);
     const toLocationIndex = generateRandomIndexForArrayIndex(toLocation);
