@@ -1,6 +1,6 @@
 // Import Statements
 import http from "./httpService";
-import { apiUrl } from "../config.json";
+import apiUrl from "../config";
 
 // Auth api end point
 const apiEndPoint = apiUrl + "/auth";
