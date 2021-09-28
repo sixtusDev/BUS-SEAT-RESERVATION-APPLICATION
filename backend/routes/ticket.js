@@ -7,7 +7,7 @@ const { schema, Ticket } = require("../model/Ticket");
 const { TripSchedule } = require("../model/TripSchedule");
 const { User } = require("../model/User");
 const { validate } = require("../utils/helperFunctions");
-const { createTransport, createTestAccount } = require("nodemailer");
+const { createTransport } = require("nodemailer");
 
 const router = express.Router();
 
